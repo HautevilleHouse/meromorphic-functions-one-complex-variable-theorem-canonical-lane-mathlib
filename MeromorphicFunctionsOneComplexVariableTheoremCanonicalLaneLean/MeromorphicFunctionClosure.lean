@@ -1,0 +1,18 @@
+import canonicalLaneMathlib.AdmissibleClass
+import MeromorphicFunctionsOneComplexVariableTheoremCanonicalLaneLean.CauchyIntegralFormula
+import MeromorphicFunctionsOneComplexVariableTheoremCanonicalLaneLean.ResidueTheorem
+import MeromorphicFunctionsOneComplexVariableTheoremCanonicalLaneLean.ArgumentPrinciple
+import MeromorphicFunctionsOneComplexVariableTheoremCanonicalLaneLean.RiemannMappingTheorem
+import MeromorphicFunctionsOneComplexVariableTheoremCanonicalLaneLean.WeierstrassFactorization
+
+namespace HautevilleHouse
+namespace MeromorphicFunctionsOneComplexVariableTheoremCanonicalLaneLean
+
+def ConstrainedMeromorphicClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_meromorphic_endgame (A : AdmissibleClass) : ConstrainedMeromorphicClosure A :=
+  And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end MeromorphicFunctionsOneComplexVariableTheoremCanonicalLaneLean
+end HautevilleHouse
